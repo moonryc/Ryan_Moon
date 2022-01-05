@@ -81,9 +81,7 @@ const HomePage: React.FC<IHomePage> = ({icon, label}) => {
 
                 {/*My everyday stack*/}
                 <Grid item xs={12} sm={12} md={6} lg={7} style={{justifyContent: "center", textAlign: "center", alignItems: "center"}} container>
-                    <Grid item xs={12}>
-                    <Typography variant="h3" component="h2">My Daily Stack</Typography>
-                    </Grid>
+
 
                     {technologyIcons.map(item => {
                         return (
@@ -108,7 +106,6 @@ const HomePage: React.FC<IHomePage> = ({icon, label}) => {
                             </Grid>
                         )
                     })}
-
                 </Grid>
             </Grid>
         </div>

@@ -24,5 +24,6 @@
 
 .extra-scroll{
     width: 100%;
-    min-height: 112px;
+    /*min-height: 112px;*/
+    min-height: 0px;
 }
