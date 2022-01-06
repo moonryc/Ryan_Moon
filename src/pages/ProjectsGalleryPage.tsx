@@ -39,6 +39,15 @@ const itemData: IImageData[] = [
         technologies: "React.JS, Express.JS, Passport.JS, MongoDb, Material UI, Date-FNS"
     },
     {
+        img: require('../images/wslManager.jpg'),
+        title: "WSL Manager",
+        height: "100%",
+        width: "100%",
+        link: "https://github.com/moonryc/WSLManager",
+        description: "An Application to help manage WSL distros on Windows machines",
+        technologies: "C#, WPF"
+    },
+    {
         img: require('../images/WeathApp.jpg'),
         title: "WeatherApp",
         height: "100%",
@@ -73,7 +82,7 @@ const itemData: IImageData[] = [
         link: "https://moonryc.github.io/challenge3/",
         description: "Generates passwords based on user input. Options include uppercase/lowercase letters, numbers, and symbols",
         technologies: "JavaScript"
-    }
+    },
 ];
 
 interface IProjectsGalleryPage {
@@ -154,8 +163,8 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
                     overflow: "auto"
                 }}>
                     <Grid container justifyContent={"center"} spacing={5}>
-                        <Grid item xs={12}>
-                            <Typography variant="h4" component="h6">{selectedImage.title}</Typography><br/>
+                        <Grid item xs={12} >
+                            <Typography variant="h4" component="h6" textAlign={"center"}>{selectedImage.title}</Typography><br/>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={8} xl={8} style={{}} container
                               justifyContent={"center"}>
