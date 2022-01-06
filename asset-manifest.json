@@ -1,17 +1,15 @@
 {
   "files": {
     "main.css": "/Ryan_Moon/static/css/main.80bcaf6f.css",
-    "main.js": "/Ryan_Moon/static/js/main.17c08d15.js",
+    "main.js": "/Ryan_Moon/static/js/main.e70dbca9.js",
     "static/js/787.774729bc.chunk.js": "/Ryan_Moon/static/js/787.774729bc.chunk.js",
     "static/media/me.png": "/Ryan_Moon/static/media/me.3661bcf97a5ea306b649.png",
     "static/media/Resume.jpg": "/Ryan_Moon/static/media/Resume.bc291f6ba27a5d6c1439.jpg",
     "static/media/moonmeds.jpg": "/Ryan_Moon/static/media/moonmeds.58488ff1ab5e8a2bc98e.jpg",
     "static/media/WeathApp.jpg": "/Ryan_Moon/static/media/WeathApp.57c68f5a99f32511be8c.jpg",
     "static/media/dailyPlanner.jpg": "/Ryan_Moon/static/media/dailyPlanner.b665832d4d7fea4fb166.jpg",
-    "static/media/moonmeds_mobile.jpg": "/Ryan_Moon/static/media/moonmeds_mobile.649b535e860bcb6c8745.jpg",
     "static/media/PasswordGen.jpg": "/Ryan_Moon/static/media/PasswordGen.92b01939bef08bc8838c.jpg",
     "static/media/quiz.jpg": "/Ryan_Moon/static/media/quiz.4264861e55367a465b48.jpg",
-    "static/media/WeathApp_Mobile.jpg": "/Ryan_Moon/static/media/WeathApp_Mobile.2d2e5b8e5c22566029ad.jpg",
     "static/media/mongodb-original.svg": "/Ryan_Moon/static/media/mongodb-original.416baad2a16190de2ad81ad547b71fd8.svg",
     "static/media/react-original.svg": "/Ryan_Moon/static/media/react-original.7098e2714733fed1ce8cdb90d51c4289.svg",
     "static/media/python-original.svg": "/Ryan_Moon/static/media/python-original.97a72db0d464c457eae934a286c1d920.svg",
@@ -22,11 +20,11 @@
     "static/media/css3-original.svg": "/Ryan_Moon/static/media/css3-original.9cecabbf6ce67609c48bc4f280a11002.svg",
     "index.html": "/Ryan_Moon/index.html",
     "main.80bcaf6f.css.map": "/Ryan_Moon/static/css/main.80bcaf6f.css.map",
-    "main.17c08d15.js.map": "/Ryan_Moon/static/js/main.17c08d15.js.map",
+    "main.e70dbca9.js.map": "/Ryan_Moon/static/js/main.e70dbca9.js.map",
     "787.774729bc.chunk.js.map": "/Ryan_Moon/static/js/787.774729bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80bcaf6f.css",
-    "static/js/main.17c08d15.js"
+    "static/js/main.e70dbca9.js"
   ]
 }
