@@ -10,8 +10,9 @@ interface IResumePage {
 const ResumePage:React.FC<IResumePage> = ({icon,label}) => {
     return (
         <div>
-            <br/>
-            <img src={require("../images/Resume.jpg")} alt={"Ryan Moon Resume"}/>
+            <a download={"Ryan_Moon_Resume.pdf"} href={require("../images/Resume.jpg")}>
+                <img src={require("../images/Resume.jpg")} alt={"Ryan Moon Resume"}/>
+            </a>
         </div>
     );
 };
