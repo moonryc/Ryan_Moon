@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Suspense} from 'react';
 import Box from '@mui/material/Box';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -111,92 +111,99 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
     }
 
 
+
     return (
-        <Box sx={{display: "flex", justifyContent: "center"}}>
-            <Box sx={{maxWidth: "80%", minHeight: 393, paddingTop: 5}}>
-            <Typography variant="h4" component="h6">My Projects</Typography>
-                <Masonry columns={{xs: 1, sm: 1, md: 2, lg: 3, xl: 3}} spacing={5} style={{padding: 0, margin: 0}}>
-                    {itemData.map((item, index) => (
-                        <Stack key={index}
-                               sx={{cursor: "pointer", border:"5px solid black", borderRadius:"10px"}}
-                               onClick={() => selectImage(item)}
-                        >
-                            <img
-                                src={item.img}
-                                srcSet={item.img}
-                                alt={item.title}
-                                loading="lazy"
-                                style={{
-                                    borderBottomLeftRadius: 4,
-                                    borderBottomRightRadius: 4,
-                                    height: item.height,
-                                    width: item.width
-                                }}
-                            />
-                        </Stack>
-                    ))}
-                </Masonry>
-            </Box>
 
-            <Modal
-                open={open}
-                disableScrollLock={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box sx={{
-                    display: "flex",
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    minWidth: 275,
-                    // maxWidth:275,
-                    bgcolor: 'background.paper',
-                    border: '2px solid #000',
-                    boxShadow: 24,
-                    p: 4,
-                    maxHeight: "80%",
-                    maxWidth: "80%",
-                    justifyContent: "center",
-                    overflow: "auto"
-                }}>
-                    <Grid container justifyContent={"center"} spacing={5}>
-                        <Grid item xs={12} >
-                            <Typography variant="h4" component="h6" textAlign={"center"}>{selectedImage.title}</Typography><br/>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={8} xl={8} style={{}} container
-                              justifyContent={"center"}>
-                            <a href={selectedImage.link}>
+        <Suspense fallback={<div>Loading...</div>}>
+        <>
+            <Box sx={{display: "flex", justifyContent: "center"}}>
+                <Box sx={{maxWidth: "80%", minHeight: 393, paddingTop: 5}}>
+                    <Typography variant="h4" component="h6">My Projects</Typography>
+                    <Masonry columns={{xs: 1, sm: 1, md: 2, lg: 3, xl: 3}} spacing={5} style={{padding: 0, margin: 0}}>
+                        {itemData.map((item, index) => (
+                            <Stack key={index}
+                                   sx={{cursor: "pointer", border:"5px solid black", borderRadius:"10px"}}
+                                   onClick={() => selectImage(item)}
+                            >
                                 <img
-                                    src={selectedImage.img}
-                                    height={selectedImage.height}
-                                    width={selectedImage.width}
-                                    alt={""}/>
-                            </a>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={4} xl={4} container justifyContent={"center"}
-                              display={"block"} style={{}}>
-
-                            <Typography
-                                variant="h6"
-                                component="h2"
-                            >{selectedImage.description}</Typography>
-
-                            <Typography
-                                variant="h6"
-                                component="h2"
-                            >Technologies: {selectedImage.technologies}</Typography>
-
-
-                        </Grid>
-                    </Grid>
+                                    src={item.img}
+                                    srcSet={item.img}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    style={{
+                                        borderBottomLeftRadius: 4,
+                                        borderBottomRightRadius: 4,
+                                        height: item.height,
+                                        width: item.width
+                                    }}
+                                />
+                            </Stack>
+                        ))}
+                    </Masonry>
                 </Box>
-            </Modal>
+
+                <Modal
+                    open={open}
+                    disableScrollLock={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={{
+                        display: "flex",
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        minWidth: 275,
+                        // maxWidth:275,
+                        bgcolor: 'background.paper',
+                        border: '2px solid #000',
+                        boxShadow: 24,
+                        p: 4,
+                        maxHeight: "80%",
+                        maxWidth: "80%",
+                        justifyContent: "center",
+                        overflow: "auto"
+                    }}>
+                        <Grid container justifyContent={"center"} spacing={5}>
+                            <Grid item xs={12} >
+                                <Typography variant="h4" component="h6" textAlign={"center"}>{selectedImage.title}</Typography><br/>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={8} xl={8} style={{}} container
+                                  justifyContent={"center"}>
+                                <a href={selectedImage.link}>
+                                    <img
+                                        src={selectedImage.img}
+                                        height={selectedImage.height}
+                                        width={selectedImage.width}
+                                        alt={""}/>
+                                </a>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={4} xl={4} container justifyContent={"center"}
+                                  display={"block"} style={{}}>
+
+                                <Typography
+                                    variant="h6"
+                                    component="h2"
+                                >{selectedImage.description}</Typography>
+
+                                <Typography
+                                    variant="h6"
+                                    component="h2"
+                                >Technologies: {selectedImage.technologies}</Typography>
 
 
-        </Box>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Modal>
+
+
+            </Box>
+        </>
+            </Suspense>
+
     );
 };
 

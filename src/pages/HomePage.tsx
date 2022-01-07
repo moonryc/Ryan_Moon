@@ -83,10 +83,10 @@ const HomePage: React.FC<IHomePage> = ({icon, label}) => {
                 <Grid item xs={12} sm={12} md={6} lg={7} style={{justifyContent: "center", textAlign: "center", alignItems: "center"}} container>
 
 
-                    {technologyIcons.map(item => {
+                    {technologyIcons.map((item) => {
                         return (
 
-                            <Grid item xs={6} sm={5} md={4} lg={3}  container style={{
+                            <Grid item xs={6} sm={5} md={4} lg={3} key={item.title} container style={{
                                 paddingLeft:"2.5vw",
                                 paddingRight:"2.5vw",
                                 textAlign: "center",

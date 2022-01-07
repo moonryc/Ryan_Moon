@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ProjectsGalleyPage from "./pages/ProjectsGalleryPage";
-import Pagify from "./components/react-mui-pagify/Pagify";
 import {AlternateEmail, BorderAll, Face, Feed, Home} from "@mui/icons-material";
 import HomePage from "./pages/HomePage";
 import ResumePage from "./pages/ResumePage";
 import ContactMePage from "./pages/ContactMePage";
 import AboutMePage from "./pages/AboutMePage";
+import Pagify from "./components/myPagify/Pagify/Pagify";
 
 function App() {
     return (

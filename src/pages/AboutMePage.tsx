@@ -14,28 +14,23 @@ const AboutMePage: React.FC<IAboutMePage> = ({icon, label}) => {
     const theme = useTheme();
     const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md'));
 
-    useEffect(() => {
-
-        console.log(isMdOrLarger)
-    });
-
-
     return (
         <div>
             <Box style={{display: "flex", justifyContent: "center"}}>
                 <Box style={{width: isMdOrLarger ? "45%" : "90%"}}>
                     <Typography variant="h4" component="h2" align={isMdOrLarger ? "justify" : "left"}>
-                        I am a <span style={{color: "red", fontWeight: "bold"}}>Full-Stack React.JS/React Native </span>
-                        developer with a degree in engineering who is passionate about creating
-                        <span style={{color: "red", fontWeight: "bold"}}> Responsive Web Design</span> while providing
-                        a stable and enjoyable user experience across all devices. I take advantage of my engineering
+                        I am a <span style={{color: "red", fontWeight: "bold"}}>Full-Stack React.JS/Native </span>
+                        developer with a B.S. degree in engineering who has a passion for providing
+                        <span style={{color: "red", fontWeight: "bold"}}> Responsive</span>, Stable, and Enjoyable Web Designs
+                        across all devices. I take advantage of my engineering
                         background to write clean, testable, reusable code and I am passionate about taking on new
                         challenges.
                     </Typography>
                     <br/>
                     <Typography variant="h4" component="h2">
-                        Lets build a <span style={{color: "red", fontWeight: "bold"}}>Better</span> user
-                        experience <span style={{color: "red", fontWeight: "bold"}}>Together</span>
+                        Let's <span style={{color: "red", fontWeight: "bold"}}>Build</span> a
+                        <span style={{color: "red", fontWeight: "bold"}}> Better</span> user
+                        experience <span style={{color: "red", fontWeight: "bold"}}>Together</span>.
                     </Typography>
                 </Box>
             </Box>
