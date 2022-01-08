@@ -1,11 +1,14 @@
-import React, {createRef, Fragment, useEffect, useState} from 'react';
+import React, {createRef, Fragment, useContext, useEffect, useState} from 'react';
 import {BottomNavigation, BottomNavigationAction, Box} from "@mui/material";
 import './Pagify.css';
 import ResponsiveNav from "../ResponsiveNav/ResponsiveNav";
 import Page from "../Page/Page";
+import {ContextStore} from "../../../context/ContextStore";
 
 
 const Pagify = (props: any) => {
+
+    const {isModalOpen} = useContext(ContextStore);
 
     const largeContainerRef = createRef<HTMLDivElement>();
     const [pageRefs, setPageRefs] = useState<React.RefObject<HTMLDivElement>[]>([React.createRef<HTMLDivElement>()]);
@@ -102,7 +105,7 @@ const Pagify = (props: any) => {
 
             //if you can go either up or down and the animation is not locked and it is not animating
             let shouldScroll = notAnimating && !cantUp && !cantDown && !animLocked;
-            if (shouldScroll) {
+            if (shouldScroll && !isModalOpen) {
                 //update last and current page
                 setLastPage(currentPage)
                 setCurrentPage(nextPage)
