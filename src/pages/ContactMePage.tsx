@@ -3,7 +3,7 @@ import {Box, Button, Icon, Paper, Typography} from "@mui/material";
 import {ReactComponent as EmailSvg} from "../images/iconmonstr-email-3.svg";
 import {ReactComponent as GitSvg} from "../images/iconmonstr-github-3.svg";
 import {ReactComponent as LinkedInSvg} from "../images/iconmonstr-linkedin-3.svg";
-import {Email, GitHub, LinkedIn} from "@mui/icons-material";
+import {Article, Email, GitHub, LinkedIn} from "@mui/icons-material";
 
 
 interface IContactMePage {
@@ -32,6 +32,10 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
                             <li style={{display:"flex",alignItems:"center"}}>
                                     <LinkedIn sx={{fontSize:50}}/>
                                 <span>Find me on Linkedin <a href={"https://www.linkedin.com/in/ryan-moon-e-i-t-00b7b262/"}>here</a></span>
+                            </li>
+                            <li style={{display:"flex",alignItems:"center"}}>
+                                <Article sx={{fontSize:50}}/>
+                                <span>View my Resume <a download={"Ryan_Moon_Resume.pdf"} href={require("../images/Ryan_Moon_Resume.pdf")}>here</a></span>
                             </li>
                         </ul>
                     </Box>

@@ -1,11 +1,41 @@
 import React, {useContext, useState} from 'react';
 import Box from '@mui/material/Box';
-
-
 import {Masonry} from '@mui/lab';
 import {Stack, Typography} from "@mui/material";
 import {ContextStore} from "../context/ContextStore";
 import DisplayPhoto from "../components/DisplayPhoto";
+
+const pictureStyles = {
+    pictureContainer: {
+        position: "relative",
+        textAlign: "center",
+        '&:hover img': {
+            transition: 'all 0.25s ease-in-out',
+            filter:'grayscale(80%) blur(2px)',
+            backgroundColor:"gray",
+        },
+        '&:hover div': {
+            transition: 'all 0.5s ease-in-out',
+            filter:'grayscale(80%)',
+        },
+        '&:hover span':{
+            transition: 'all 0.25s ease-in-out',
+            color:"white",
+            backgroundColor: "gray",
+            padding:1,
+            paddingRight:3.5,
+            paddingLeft: 3.5,
+            borderRadius:25
+        }
+    },
+    pictureHoverText: {
+        position: "absolute",
+        color: "transparent",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+    }
+} as const
 
 
 export interface IImageData {
@@ -123,23 +153,24 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
                 <Masonry columns={{xs: 1, sm: 1, md: 2, lg: 3, xl: 3}} spacing={5} style={{padding: 0, margin: 0}}>
                     {itemData.map((item, index) => (
                         <Stack key={index}
-                               sx={{cursor: "pointer", border: "5px solid #84b6ca", borderRadius: "10px"}}
+                               sx={{cursor: "pointer", border: "5px solid #84b6ca", borderRadius: "10px",...pictureStyles.pictureContainer}}
                                onClick={() => handleOpen(item)}
                         >
+
+
                             <img
                                 src={item.img}
                                 srcSet={item.img}
                                 alt={item.title}
-                                loading="lazy"
-                                style={{
-                                    borderBottomLeftRadius: 4,
-                                    borderTopRightRadius: 4,
-                                    borderTopLeftRadius: 4,
-                                    borderBottomRightRadius: 4,
-                                    height: "auto",
+                                loading={"eager"}
+                                style={{height: "auto",
+                                    borderRadius:5,
                                     width: item.width
                                 }}
                             />
+                            <Typography component={"span"} variant={"h6"} sx={pictureStyles.pictureHoverText}>View</Typography>
+
+
                         </Stack>
                     ))}
                 </Masonry>

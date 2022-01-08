@@ -92,6 +92,7 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                                 component={"a"}
                                 ref={imageRef}
                                 href={selectedImage.link}
+                                target={"_blank"}
                                 sx={pictureStyles.pictureContainer}
                             >
 
@@ -102,7 +103,7 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                                     style={{borderRadius:15,border:"solid",borderColor:"lightBlue",borderWidth:"5px"}}
                                     alt={""}/>
                                 <Typography variant={"h6"} component={"span"} sx={{...pictureStyles.pictureHoverText}}
-                                            ref={imageTextRef}>Click Here To View</Typography>
+                                            >Click Here To View</Typography>
 
                             </Box>
 
@@ -110,6 +111,11 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={4} container justifyContent={"center"}
                               display={"block"}>
+
+                            <Typography
+                                variant="h5"
+                                component="h2"
+                            >Description:</Typography>
 
                             <Typography
                                 variant="h6"
@@ -133,6 +139,7 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                                 component="a"
                                 textAlign={"center"}
                                 href={selectedImage.gitHubLink}
+                                target={"_blank"}
                             >View the source code
                             </Typography>
                             <br/>
