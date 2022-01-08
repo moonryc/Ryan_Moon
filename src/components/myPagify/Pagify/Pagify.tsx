@@ -139,15 +139,19 @@ const Pagify = (props: any) => {
         setPageRefs(newPageRefs)
     }
 
+    const resizeHandler = () => {
+        setHeight(window.innerHeight)
+        setWidth(window.innerWidth)
+    }
 
     /**
      * Handle Resize
      */
     useEffect(() => {
-        window.addEventListener('resize', () => {
-            setHeight(window.innerHeight)
-            setWidth(window.innerWidth)
-        })
+        window.addEventListener('resize', resizeHandler)
+        return ()=>{
+            window.removeEventListener('resize', resizeHandler)
+        }
     }, [])
 
     /**
