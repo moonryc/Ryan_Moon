@@ -1,8 +1,10 @@
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import Box from "@mui/material/Box";
-import {Grid, Modal, Typography} from "@mui/material";
+import {Grid, Icon, IconButton, Modal, Typography} from "@mui/material";
 import {ContextStore} from "../context/ContextStore";
 import {IImageData} from "../pages/ProjectsGalleryPage";
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const modalBox = {
     display: "flex",
@@ -52,6 +54,22 @@ const pictureStyles = {
     }
 } as const
 
+const closeIcon={
+    position:"absolute",
+    left:"94%",
+    top:"1%",
+        transition: 'all 0.5s ease-in-out',
+        transform: "rotate(90deg)",
+    "&:hover svg":{
+        transition: 'all 0.5s ease-in-out',
+        transform: "rotate(90deg)",
+    },
+    "&:not(hover) svg":{
+        transition: 'all 0.5s ease-in-out',
+        transform: "rotate(-90deg)",
+    }
+} as const
+
 
 interface IDisplayPhoto {
     selectedImage: IImageData,
@@ -62,10 +80,6 @@ interface IDisplayPhoto {
 const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) => {
 
     const imageRef = useRef(null);
-    const imageTextRef = useRef(null);
-
-
-
 
     const {setIsModalOpen} = useContext(ContextStore);
 
@@ -79,6 +93,12 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
             <Modal open={open} disableScrollLock={open} onClose={handleClose} aria-labelledby="modal-modal-title"
                    aria-describedby="modal-modal-description">
                 <Box sx={modalBox}>
+
+                    <IconButton sx={closeIcon} onClick={()=>handleClose()}>
+                        <CloseIcon sx={{fontSize:"30px"}}/>
+                    </IconButton>
+
+
                     <Grid container justifyContent={"center"} spacing={5}>
                         <Grid item xs={12} zeroMinWidth>
                             <Typography variant="h4" component="h6"
@@ -100,6 +120,7 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                                     src={selectedImage.img}
                                     height={"auto"}
                                     width={"100%"}
+                                    loading={"eager"}
                                     style={{borderRadius:15,border:"solid",borderColor:"lightBlue",borderWidth:"5px"}}
                                     alt={""}/>
                                 <Typography variant={"h6"} component={"span"} sx={{...pictureStyles.pictureHoverText}}
