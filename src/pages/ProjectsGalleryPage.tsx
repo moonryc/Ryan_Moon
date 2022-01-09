@@ -147,6 +147,7 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
 
 
     return (
+        <div>
         <Box sx={{display: "flex", justifyContent: "center"}}>
             <Box sx={{maxWidth: "80%", minHeight: 393, paddingTop: 5}}>
                 <Typography variant="h4" component="h6">My Projects</Typography>
@@ -181,7 +182,7 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
 
         </Box>
 
-
+        </div>
     );
 };
 
