@@ -27,15 +27,15 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <GitHub sx={{fontSize:50}}/>
-                                <span>Find me on Github <a href={"https://github.com/moonryc"}>here</a></span>
+                                <span>Find me on <a href={"https://github.com/moonryc"}>Github</a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                     <LinkedIn sx={{fontSize:50}}/>
-                                <span>Find me on Linkedin <a href={"https://www.linkedin.com/in/ryan-moon-e-i-t-00b7b262/"}>here</a></span>
+                                <span>Find me on <a href={"https://www.linkedin.com/in/ryan-moon-e-i-t-00b7b262/"}>Linkedin </a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <Article sx={{fontSize:50}}/>
-                                <span>View my Resume <a download={"Ryan_Moon_Resume.pdf"} href={require("../images/Ryan_Moon_Resume.pdf")}>here</a></span>
+                                <span>View my <a download={"Ryan_Moon_Resume.pdf"} href={require("../images/Ryan_Moon_Resume.pdf")}>Resume</a></span>
                             </li>
                         </ul>
                     </Box>
