@@ -39,15 +39,10 @@ const Pagify = (props: any) => {
         let thisTouch = e.touches[0];
 
         //Calculate the change in x and y from where the finger started and where the finger ended
-        let dx
-        let dy
-        if (lastTouch === null) {
-            dx = thisTouch.pageX;
-            dy = thisTouch.pageY;
-        } else {
-            dx = thisTouch.pageX - lastTouch.pageX;
-            dy = thisTouch.pageY - lastTouch.pageY;
-        }
+        //@ts-ignore
+        let dx = thisTouch.pageX - lastTouch.pageX;
+        //@ts-ignore
+        let dy = thisTouch.pageY - lastTouch.pageY;
 
         //update last touch
         setLastTouch(thisTouch);
@@ -90,42 +85,42 @@ const Pagify = (props: any) => {
         //Is the element a scrolling element that's in the middle of scrolling itself?
         let elem = pageRefs[currentPage].current;
 
-        let upBlocked
-        let downBlocked
-        if (elem !== null) {
-            upBlocked = elem.scrollTop > scrollPadding;
-            downBlocked = elem.scrollTop + height + scrollPadding < elem.scrollHeight
+        // @ts-ignore
+        let upBlocked = elem.scrollTop > scrollPadding;
+        // @ts-ignore
+        let downBlocked = elem.scrollTop + height + scrollPadding < elem.scrollHeight
 
-            //if trying to go upwards and blocked
-            let cantUp = e.deltaY < 0 && upBlocked;
-            //if trying to go down and blocked
-            let cantDown = e.deltaY > 0 && downBlocked;
 
-            // console.log( elem.scrollTop, this.state.height, elem.scrollHeight);
+        //if trying to go upwards and blocked
+        let cantUp = e.deltaY < 0 && upBlocked;
+        //if trying to go down and blocked
+        let cantDown = e.deltaY > 0 && downBlocked;
 
-            //if you can go either up or down and the animation is not locked and it is not animating
-            let shouldScroll = notAnimating && !cantUp && !cantDown && !animLocked;
-            if (shouldScroll && !isModalOpen) {
-                //update last and current page
-                setLastPage(currentPage)
-                setCurrentPage(nextPage)
+        // console.log( elem.scrollTop, this.state.height, elem.scrollHeight);
 
-                //Safety for 2 event triggers in one frame
-                //Lock animation and set lock timer
-                setAnimLocked(true);
-                setAnimLockTimer(new Date());
-            } else {
-                //if it is not animating and the animation is locked remove the animation lock after
-                // a change in 100 miliseconds
-                if (notAnimating && animLocked) {
-                    let animDelta = new Date().getTime() - animLockTimer.getTime();
-                    if (animDelta > 100) {
-                        setAnimLocked(false);
-                    }
+        //if you can go either up or down and the animation is not locked and it is not animating
+        let shouldScroll = notAnimating && !cantUp && !cantDown && !animLocked;
+        if (shouldScroll && !isModalOpen) {
+            //update last and current page
+            setLastPage(currentPage)
+            setCurrentPage(nextPage)
 
+            //Safety for 2 event triggers in one frame
+            //Lock animation and set lock timer
+            setAnimLocked(true);
+            setAnimLockTimer(new Date());
+        } else {
+            //if it is not animating and the animation is locked remove the animation lock after
+            // a change in 100 miliseconds
+            if (notAnimating && animLocked) {
+                let animDelta = new Date().getTime() - animLockTimer.getTime();
+                if (animDelta > 100) {
+                    setAnimLocked(false);
                 }
+
             }
         }
+
     }
 
 
@@ -149,7 +144,7 @@ const Pagify = (props: any) => {
      */
     useEffect(() => {
         window.addEventListener('resize', resizeHandler)
-        return ()=>{
+        return () => {
             window.removeEventListener('resize', resizeHandler)
         }
     }, [])
@@ -179,7 +174,7 @@ const Pagify = (props: any) => {
                 onTouchStart={(e) => handleOnTouchStart(e)}
                 onTouchMove={(e) => handleOnTouchMove(e)}>
 
-                <Box ref={largeContainerRef} className={"large-container"} style={{
+                <div ref={largeContainerRef} className={"large-container"} style={{
                     height: height * props.children.length,
                     transform: `translateY(` + (-currentPage * height) + `px)`
                 }}>
@@ -198,14 +193,14 @@ const Pagify = (props: any) => {
                                 style={{width: width, height: height}}
                                 pageRef={pageRefs[keyIndex]}
                                 key={keyIndex} {...child.props}>
-                                    {childWithSetPage}
+                                {childWithSetPage}
 
                                 {/*Spacer because navbar can be up to 112px tall*/}
                                 {child.props.nospacer ? "" : <div className="extra-scroll">&nbsp;</div>}
                             </Page>
                         )
                     })}
-                </Box>
+                </div>
             </div>
         </Fragment>
     );
