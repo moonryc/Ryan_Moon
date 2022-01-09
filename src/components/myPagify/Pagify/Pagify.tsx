@@ -175,7 +175,8 @@ const Pagify = (props: any) => {
                 onTouchMove={(e) => handleOnTouchMove(e)}>
 
                 <div ref={largeContainerRef} className={"large-container"} style={{
-                    height: height * props.children.length,
+                    //@ts-ignore
+                    hight: height * props.children.length,
                     transform: `translateY(` + (-currentPage * height) + `px)`
                 }}>
                     {props.children.map((child: any) => {
