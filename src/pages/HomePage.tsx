@@ -22,13 +22,13 @@ interface IHomePage {
 const technologyIcons = [
     {icon: <ReactSvg/>, rating: 5, title:"React"},
     {icon: <JavascriptSvg/>, rating: 5, title:"JavaScript"},
+    {icon: <ExpressSvg/>, rating: 5, title:"Express"},
+    {icon: <NodeSvg/>, rating: 5, title:"Node"},
+    {icon: <MongoSvg/>, rating: 4.5, title:"MongoDb"},
     {icon: <CssSvg/>, rating: 4.5, title:"CSS"},
     {icon: <TypescriptSvg/>, rating: 3.5, title:"TypeScript"},
-    {icon: <ExpressSvg/>, rating: 5, title:"Express"},
     {icon: <PythonSvg/>, rating: 3.5, title:"Python"},
-    {icon: <NodeSvg/>, rating: 5, title:"Node"},
-    {icon: <MongoSvg/>, rating: 4.5, title:"MongoDb"}]
-
+]
 
 const HomePage: React.FC<IHomePage> = ({icon, label}) => {
 

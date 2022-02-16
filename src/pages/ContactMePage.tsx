@@ -31,7 +31,7 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                     <LinkedIn sx={{fontSize:50}}/>
-                                <span>Find me on <a href={"https://www.linkedin.com/in/ryan-moon-e-i-t-00b7b262/"}>Linkedin </a></span>
+                                <span>Find me on <a href={"https://www.linkedin.com/in/ryan-c-moon"}>Linkedin </a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <Article sx={{fontSize:50}}/>
