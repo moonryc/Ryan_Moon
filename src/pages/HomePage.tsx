@@ -43,19 +43,13 @@ const HomePage: React.FC<IHomePage> = ({icon, label}) => {
         const height = window.document.querySelector(".bottom-navigation").clientHeight
         // @ts-ignore
         const headerTitle = window.document.querySelector("#header").clientHeight
-
         if(headerTitle !== null){
             setHeader(headerTitle)
         }
-
         if (height !== null) {
             setHeightOfNavbar(height)
-
         }
-
     });
-
-
 
     return (
         <div>

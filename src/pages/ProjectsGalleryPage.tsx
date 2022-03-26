@@ -51,7 +51,17 @@ export interface IImageData {
 
 const itemData: IImageData[] = [
     {
-        img: require('../images/searching-and-heart.gif'),
+        img: require('../images/Quick-techie.png'),
+        title: "Quick-Techie",
+        height: "100%",
+        width: "100%",
+        link: "https://quick-techie.herokuapp.com/",
+        description: "This is a Wordpress-like clone that allows users to make blog posts and comment on each other posts. Posts can be delted and comments can be removed by the author of each post. mySQL is used to made the database, express-session is used for cookie and session management, and bcrypt is used for user password encryption",
+        technologies: ["Express", "mySQL", "Handlebars", "expression-session", "bcrypt", "Bulma"],
+        gitHubLink: "https://github.com/moonryc/quick-techie"
+    },
+    {
+        img: require('../images/Movie-night.png'),
         title: 'MovieNight',
         height: "100%",
         width: "100%",
@@ -61,7 +71,7 @@ const itemData: IImageData[] = [
         gitHubLink: "https://github.com/moonryc/MovieNight"
     },
     {
-        img: require('../images/moonmeds.jpg'),
+        img: require('../images/moonmeds.png'),
         title: 'MoonMeds',
         height: "100%",
         width: "100%",
@@ -69,16 +79,6 @@ const itemData: IImageData[] = [
         description: "This is a one page app written in React.JS and Express.Js to help users keep track of their medications.",
         technologies: ["React.JS", "Express.JS", "Passport.JS", "MongoDb", "Material UI", "Date-FNS"],
         gitHubLink: "https://github.com/moonryc/moonmeds"
-    },
-    {
-        img: require('../images/wslManager.jpg'),
-        title: "WSL Manager",
-        height: "100%",
-        width: "100%",
-        link: "https://github.com/moonryc/WSLManager",
-        description: "An Application to help manage WSL distros on Windows machines",
-        technologies: ["C#", "WPF"],
-        gitHubLink: "https://github.com/moonryc/WSLManager"
     },
     {
         img: require('../images/wslManager.jpg'),
@@ -128,7 +128,7 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
         <div>
             <Box sx={{display: "flex", justifyContent: "center"}}>
                 <Box sx={{maxWidth: "80%", minHeight: 393, paddingTop: 5}}>
-                    <Typography variant="h4" component="h6" sx={{marginBottom:"5vh"}}>My Projects</Typography>
+                    <Typography variant="h4" component="h6" sx={{marginBottom: "5vh"}}>My Projects</Typography>
 
 
                     {/*<Box sx={{display:"flex", flexWrap:"wrap"}}>*/}
@@ -147,7 +147,11 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
                     <Masonry columns={{xs: 1, sm: 1, md: 2, lg: 2, xl: 2}} spacing={5} style={{padding: 0, margin: 0}}>
                         {itemData.map((item, index) => (
                             <Stack key={index}
-                                   sx={{cursor: "pointer", border: "5px solid #84b6ca", borderRadius: "10px",...pictureStyles.pictureContainer}}
+                                   sx={{
+                                       cursor: "pointer",
+                                       border: "5px solid #84b6ca",
+                                       borderRadius: "10px", ...pictureStyles.pictureContainer
+                                   }}
                                    onClick={() => handleOpen(item)}
                             >
 
@@ -157,12 +161,14 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
                                     srcSet={item.img}
                                     alt={item.title}
                                     loading={"eager"}
-                                    style={{height: "auto",
-                                        borderRadius:5,
+                                    style={{
+                                        height: "auto",
+                                        borderRadius: 5,
                                         width: item.width
                                     }}
                                 />
-                                <Typography component={"span"} variant={"h6"} sx={pictureStyles.pictureHoverText}>View</Typography>
+                                <Typography component={"span"} variant={"h6"}
+                                            sx={pictureStyles.pictureHoverText}>View</Typography>
 
 
                             </Stack>

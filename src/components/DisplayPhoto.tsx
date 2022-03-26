@@ -54,21 +54,32 @@ const pictureStyles = {
     }
 } as const
 
-const closeIcon={
-    position:"absolute",
-    left:"94%",
-    top:"1%",
-        transition: 'all 0.5s ease-in-out',
-        transform: "rotate(90deg)",
-    "&:hover svg":{
+const closeIcon = {
+    position: "absolute",
+    animationDuration: "2s",
+    animationName: "spin",
+    right: 10,
+    top: "1%",
+    transition: 'all 0.5s ease-in-out',
+    transform: "rotate(90deg)",
+    "&:hover svg": {
         transition: 'all 0.5s ease-in-out',
         transform: "rotate(90deg)",
     },
-    "&:not(hover) svg":{
+    "&:not(hover) svg": {
         transition: 'all 0.5s ease-in-out',
         transform: "rotate(-90deg)",
+    },
+    "@keyframes spin": {
+        "0%": {transform: "rotate(-90deg)"},
+        "50%": {transform: "rotate(90deg)"},
+        "100%": {transform: "rotate(-90deg)"},
+
     }
+
 } as const
+
+
 
 
 interface IDisplayPhoto {
