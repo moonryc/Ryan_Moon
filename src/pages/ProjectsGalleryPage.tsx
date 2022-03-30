@@ -51,7 +51,7 @@ export interface IImageData {
 
 const itemData: IImageData[] = [
     {
-        img: require('../images/Quick-techie.png'),
+        img: process.env.PUBLIC_URL + '/img/Quick-techie.png',
         title: "Quick-Techie",
         height: "100%",
         width: "100%",
@@ -61,7 +61,7 @@ const itemData: IImageData[] = [
         gitHubLink: "https://github.com/moonryc/quick-techie"
     },
     {
-        img: require('../images/Movie-night.png'),
+        img: process.env.PUBLIC_URL +'/img/Movie-night.png',
         title: 'MovieNight',
         height: "100%",
         width: "100%",
@@ -71,7 +71,7 @@ const itemData: IImageData[] = [
         gitHubLink: "https://github.com/moonryc/MovieNight"
     },
     {
-        img: require('../images/moonmeds.png'),
+        img: process.env.PUBLIC_URL + '/img/moonmeds.png',
         title: 'MoonMeds',
         height: "100%",
         width: "100%",
@@ -81,7 +81,7 @@ const itemData: IImageData[] = [
         gitHubLink: "https://github.com/moonryc/moonmeds"
     },
     {
-        img: require('../images/wslManager.jpg'),
+        img: process.env.PUBLIC_URL + '/img/wslManager.jpg',
         title: "WSL Manager",
         height: "100%",
         width: "100%",
@@ -104,14 +104,14 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
 
 
     const [selectedImage, setSelectedImage] = useState<IImageData>({
-        img: require('../images/PasswordGen.jpg'),
-        title: "Password Generator",
+        img: process.env.PUBLIC_URL + '/img/wslManager.jpg',
+        title: " ",
         height: "100%",
         width: "100%",
-        link: "https://moonryc.github.io/challenge3/",
-        description: "PASSWORD",
+        link: " ",
+        description: " ",
         technologies: ["null"],
-        gitHubLink: ""
+        gitHubLink: " "
     });
     const [open, setOpen] = useState(false);
 
