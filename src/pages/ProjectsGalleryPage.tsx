@@ -41,7 +41,8 @@ const pictureStyles = {
 export interface IImageData {
     img: string,
     title: string,
-    height: number | string,
+    maxHeight?:number|string,
+    height?: number | string,
     width: number | string,
     link: string,
     description: string,
@@ -81,7 +82,7 @@ const itemData: IImageData[] = [
         gitHubLink: "https://github.com/moonryc/moonmeds"
     },
     {
-        img: process.env.PUBLIC_URL + '/img/wslManager.jpg',
+        img: process.env.PUBLIC_URL + '/img/RedBinder.png',
         title: "WSL Manager",
         height: "100%",
         width: "100%",
@@ -120,7 +121,6 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
         setSelectedImage(singleImageData)
         setOpen(true)
         setIsModalOpen(true)
-
     }
 
 
@@ -131,18 +131,7 @@ const ProjectsGalleyPage: React.FC<IProjectsGalleryPage> = ({icon, label}) => {
                     <Typography variant="h4" component="h6" sx={{marginBottom: "5vh"}}>My Projects</Typography>
 
 
-                    {/*<Box sx={{display:"flex", flexWrap:"wrap"}}>*/}
 
-                    {/*    {itemData.map((photo, index) => {*/}
-                    {/*        return (*/}
-
-                    {/*                <Box sx={{flex:"50%",cursor: "pointer", border: "5px solid #84b6ca", borderRadius: "10px",...pictureStyles.pictureContainer}} key={index+"photo"}>*/}
-                    {/*                    <img src={photo.img} style={{height:"100%", width:"100%"}}/>*/}
-                    {/*                </Box>*/}
-
-                    {/*        )*/}
-                    {/*    })}*/}
-                    {/*</Box>*/}
 
                     <Masonry columns={{xs: 1, sm: 1, md: 2, lg: 2, xl: 2}} spacing={5} style={{padding: 0, margin: 0}}>
                         {itemData.map((item, index) => (

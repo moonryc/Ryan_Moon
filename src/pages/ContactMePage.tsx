@@ -16,14 +16,14 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
         <div>
             <Box style={{display: "flex", justifyContent: "center"}}>
 
-                <Paper style={{width: "500px", height:"500px",display:"flex",justifyContent:"center", textAlign:"center",flexDirection:"column"}}>
-                    <Typography variant="h2" gutterBottom component="div">CONTACT ME</Typography>
+                <Paper style={{maxWidth:'500px',minWidth: "auto", height:"auto",display:"flex",justifyContent:"center", textAlign:"center",flexDirection:"column", padding:'25px'}}>
+                    <Typography variant="h4" gutterBottom component="div">CONTACT ME</Typography>
 
                     <Box style={{display: "flex", justifyContent: "center"}}>
                         <ul style={{listStyle: "none", textAlign: "justify"}}>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <Email sx={{fontSize:50}}/>
-                                <span>Email Me: <a href={"mailto:rycmoon@gmail.com"}>RycMoon@gmail.com</a></span>
+                                <span>Email: <a href={"mailto:rycmoon@gmail.com"}>RycMoon@gmail.com</a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <GitHub sx={{fontSize:50}}/>

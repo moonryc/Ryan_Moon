@@ -4,6 +4,7 @@ import './Pagify.css';
 import ResponsiveNav from "../ResponsiveNav/ResponsiveNav";
 import Page from "../Page/Page";
 import {ContextStore} from "../../../context/ContextStore";
+import {SectionedScrollBar} from "../../SectionedScrollBar";
 
 
 const Pagify = (props: any) => {
@@ -162,11 +163,15 @@ const Pagify = (props: any) => {
 
     return (
         <Fragment>
+            {/*This sircumvents the issue of finding the client height*/}
             <BottomNavigation onChange={(event, newValue) => setPage(newValue)} showLabels component={ResponsiveNav}>
                 {props.children.map((child: any) => (
-                    <BottomNavigationAction key={child.props.label} label={child.props.label} icon={child.props.icon}/>
+                    <></>
+                    // <BottomNavigationAction key={child.props.label} label={child.props.label} icon={child.props.icon}/>
                 ))}
             </BottomNavigation>
+
+            <SectionedScrollBar page={currentPage} setPage={setCurrentPage}/>
 
             <div
                 className="page-container"
@@ -190,12 +195,13 @@ const Pagify = (props: any) => {
 
                         return (
                             <Page
-                                style={{width: width, height: height}}
+                                style={{ width: width, height: height }}
                                 pageRef={pageRefs[keyIndex]}
                                 key={keyIndex} {...child.props}>
                                 {childWithSetPage}
 
                                 {/*Spacer because navbar can be up to 112px tall*/}
+                                hello
                                 {child.props.nospacer ? "" : <div className="extra-scroll">&nbsp;</div>}
                             </Page>
                         )
