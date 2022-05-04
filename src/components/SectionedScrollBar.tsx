@@ -112,7 +112,7 @@ export const SectionedScrollBar = (props: any) => {
                     id={3}
                     page={props.page}
                     setPage={props.setPage}
-                    title="MovieNight"
+                    title="SaraBot"
                 />
                 <ScrollPartition
                     id={4}

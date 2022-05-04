@@ -7,14 +7,14 @@ import {IImageData} from "./ProjectsGalleryPage";
 import DisplayPhoto from "../components/DisplayPhoto";
 
 const item =         {
-        img: process.env.PUBLIC_URL +'/img/Movie-night.png',
-        title: 'MovieNight',
+        img: process.env.PUBLIC_URL +'/img/SaraBot.png',
+        title: 'SaraBot',
         height: "100%",
         width: "100%",
-        link: "https://moonryc.github.io/MovieNight/",
-        description: "This is an Website for searching and comparing multiples movies and movie scores. You can save movies for later and press the popular button get a random movie",
-        technologies: ["HTML", "CSS", "Bulma", "JavaScript"],
-        gitHubLink: "https://github.com/moonryc/MovieNight"
+        link: "https://ryanmoon.xyz/sarabot",
+        description: "SaraBot is an AI Tutor that can help assist your education it is programmed to answer questions regarding CSS, JavaScript, and HTML.",
+        technologies: ["React", "Material-UI", "TypeScript", "AI21 studio"],
+        gitHubLink: "https://github.com/ChisatoSozo/ai-code-helper"
     }
 
 interface props {
