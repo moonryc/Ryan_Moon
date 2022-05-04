@@ -201,7 +201,6 @@ const Pagify = (props: any) => {
                                 {childWithSetPage}
 
                                 {/*Spacer because navbar can be up to 112px tall*/}
-                                hello
                                 {child.props.nospacer ? "" : <div className="extra-scroll">&nbsp;</div>}
                             </Page>
                         )

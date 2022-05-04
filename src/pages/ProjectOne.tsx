@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Face} from "@mui/icons-material";
-import {Box, Stack, Typography} from "@mui/material";
-import {pictureStyles} from "../styles/styles";
+import {Box, ImageListItem, ImageListItemBar, Stack, Typography} from "@mui/material";
+import {pictureStyles, picEffect} from "../styles/styles";
 import {ContextStore} from "../context/ContextStore";
 import {IImageData} from "./ProjectsGalleryPage";
 import DisplayPhoto from "../components/DisplayPhoto";
@@ -9,11 +9,11 @@ import DisplayPhoto from "../components/DisplayPhoto";
 const item = {
     img: process.env.PUBLIC_URL + '/img/RedBinder.png',
     title: "Red Binder",
-    maxHeight: "10vh",
+    maxHeight: "70vh",
     width: "auto",
     link: "https://github.com/moonryc/WSLManager",
-    description: "An Application to help manage WSL distros on Windows machines",
-    technologies: ["C#", "WPF"],
+    description: "An iOS/Android application design to manage medications for multiple people in a household.",
+    technologies: ['React Native', 'expo', 'apollo-server-express', 'bcrypt', 'mongoose', 'express', 'graphql', 'date-fns', 'lodash', '@react-native-community/datetimepicker', 'react-navigation ( various react navigation packages)'],
     gitHubLink: "https://github.com/moonryc/WSLManager"
 }
 
@@ -32,6 +32,7 @@ const ProjectOne: React.FC<props> = () => {
         title: " ",
         height:'auto',
         width: "auto",
+        maxHeight:'70vh',
         link: " ",
         description: " ",
         technologies: ["null"],
@@ -59,7 +60,7 @@ const ProjectOne: React.FC<props> = () => {
                     onClick={() => handleOpen(item)}
                 >
 
-
+                    <ImageListItem sx={{...picEffect}}>
                     <img
                         src={item.img}
                         srcSet={item.img}
@@ -71,9 +72,10 @@ const ProjectOne: React.FC<props> = () => {
                             width: item.width
                         }}
                     />
+                        <ImageListItemBar title={item.gitHubLink} sx={pictureStyles.listItemBarStyle}/>
                     <Typography component={"span"} variant={"h6"}
                                 sx={pictureStyles.pictureHoverText}>View</Typography>
-
+                    </ImageListItem>
 
                 </Stack>
                 <DisplayPhoto selectedImage={selectedImage} open={open} setOpen={setOpen}/>

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Face} from "@mui/icons-material";
-import {Box, Stack, Typography} from "@mui/material";
-import {pictureStyles} from "../styles/styles";
+import {Box, ImageListItem, ImageListItemBar, Stack, Typography} from "@mui/material";
+import {picEffect, pictureStyles} from "../styles/styles";
 import {ContextStore} from "../context/ContextStore";
 import {IImageData} from "./ProjectsGalleryPage";
 import DisplayPhoto from "../components/DisplayPhoto";
@@ -59,21 +59,21 @@ const ProjectTwo:React.FC<props> = () => {
                onClick={() => handleOpen(item)}
         >
 
-
+            <ImageListItem sx={{...picEffect}}>
             <img
                 src={item.img}
-                srcSet={item.img}
                 alt={item.title}
-                loading={"eager"}
                 style={{
+                    height: "auto",
                     maxHeight: "70vh",
-                    width:'auto',
+                    width:'100%',
                     borderRadius: 5,
                 }}
             />
+                <ImageListItemBar title={item.link} sx={pictureStyles.listItemBarStyle}/>
             <Typography component={"span"} variant={"h6"}
                         sx={pictureStyles.pictureHoverText}>View</Typography>
-
+            </ImageListItem>
 
         </Stack>
                 <DisplayPhoto selectedImage={selectedImage} open={open} setOpen={setOpen}/>

@@ -60,7 +60,7 @@ export const SectionedScrollBar = (props: any) => {
                         <FolderOutlined
                             sx={{ display: props.id === 5 ? "block" : "none" }}
                         />
-                        <MailOutlined color={'primary'} sx={{ display: props.id === 6 ? "block" : "none" }} />
+                        <MailOutlined sx={{ display: props.id === 6 ? "block" : "none" }} />
                     </IconButton>
                 </Tooltip>
             );

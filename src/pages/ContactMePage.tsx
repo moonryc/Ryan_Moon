@@ -22,19 +22,19 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
                     <Box style={{display: "flex", justifyContent: "center"}}>
                         <ul style={{listStyle: "none", textAlign: "justify"}}>
                             <li style={{display:"flex",alignItems:"center"}}>
-                                <Email sx={{fontSize:50}}/>
+                                <Email sx={{fontSize:40}}/>
                                 <span>Email: <a href={"mailto:rycmoon@gmail.com"}>RycMoon@gmail.com</a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
-                                <GitHub sx={{fontSize:50}}/>
+                                <GitHub sx={{fontSize:40}}/>
                                 <span>Find me on <a href={"https://github.com/moonryc"}>Github</a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
-                                    <LinkedIn sx={{fontSize:50}}/>
+                                    <LinkedIn sx={{fontSize:40}}/>
                                 <span>Find me on <a href={"https://www.linkedin.com/in/ryan-c-moon"}>Linkedin </a></span>
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
-                                <Article sx={{fontSize:50}}/>
+                                <Article sx={{fontSize:40}}/>
                                 <span>View my <a download={"Ryan_Moon_Resume.pdf"} href={require("../images/Ryan_Moon_Resume.pdf")}>Resume</a></span>
                             </li>
                         </ul>

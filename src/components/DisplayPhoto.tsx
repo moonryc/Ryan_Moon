@@ -132,7 +132,7 @@ const DisplayPhoto: React.FC<IDisplayPhoto> = ({selectedImage, setOpen, open}) =
                                     height={"auto"}
                                     width={"100%"}
                                     loading={"eager"}
-                                    style={{borderRadius:15,border:"solid",borderColor:"lightBlue",borderWidth:"5px"}}
+                                    style={{borderRadius:15,border:"solid",borderColor:"lightBlue",borderWidth:"5px", maxHeight:selectedImage.maxHeight}}
                                     alt={""}/>
                                 <Typography variant={"h6"} component={"span"} sx={{...pictureStyles.pictureHoverText}}
                                             >Click Here To View</Typography>
