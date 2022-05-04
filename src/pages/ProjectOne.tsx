@@ -11,10 +11,10 @@ const item = {
     title: "Red Binder",
     maxHeight: "70vh",
     width: "auto",
-    link: "https://github.com/moonryc/WSLManager",
+    link: "https://github.com/moonryc/red-binder",
     description: "An iOS/Android application design to manage medications for multiple people in a household.",
     technologies: ['React Native', 'expo', 'apollo-server-express', 'bcrypt', 'mongoose', 'express', 'graphql', 'date-fns', 'lodash', '@react-native-community/datetimepicker', 'react-navigation ( various react navigation packages)'],
-    gitHubLink: "https://github.com/moonryc/WSLManager"
+    gitHubLink: "https://github.com/moonryc/red-binder"
 }
 
 interface props {
