@@ -35,7 +35,7 @@ const ContactMePage: React.FC<IContactMePage> = ({icon, label}) => {
                             </li>
                             <li style={{display:"flex",alignItems:"center"}}>
                                 <Article sx={{fontSize:40}}/>
-                                <span>View my <a download={"Ryan_Moon_Resume.pdf"} href={require(`${process.env.PUBLIC_URL}/resume`)}>Resume</a></span>
+                                <span>View my <a download={"Ryan_Moon_Resume.pdf"} href={`${process.env.PUBLIC_URL}/resume`}>Resume</a></span>
                             </li>
                         </ul>
                     </Box>
